@@ -12,14 +12,15 @@ export const Target: React.FC<Props> = ({ score, setScore }) => {
 
   return (
     <button
-      onClick={() => {}}
-      className={`absolute h-6 w-6 translate-x-1/2 translate-y-1/2 rounded-full bg-red-600`}
+      onClick={(e) => {
+        e.stopPropagation()
+      }}
+      className="select-none absolute h-6 w-6 translate-x-1/2 translate-y-1/2 rounded-full bg-red-600"
       style={{
         bottom: `${getRandomNumber()}%`,
         right: `${getRandomNumber()}%`,
       }}
-    >
-      {count}
-    </button>
+    />
+    
   )
 }
