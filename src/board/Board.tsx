@@ -10,16 +10,23 @@ interface Props {
 }
 
 export const Board: React.FC<Props> = ({
+  targets,
+  setTargets,
   score,
   setScore,
   endGame,
-  targets,
-  setTargets,
 }) => {
   return (
     <div onClick={endGame} className="relative h-96 w-96 border border-black">
       {targets.map((target) => (
-        <Target key={target} score={score} setScore={setScore} />
+        <Target
+          key={target}
+          id={target}
+          score={score}
+          setScore={setScore}
+          targets={targets}
+          setTargets={setTargets}
+        />
       ))}
     </div>
   )
