@@ -36,8 +36,6 @@ export const Target: React.FC<Props> = ({
         bottom,
         right,
       }}
-    >
-      {id}
-    </button>
+    />
   )
 }
